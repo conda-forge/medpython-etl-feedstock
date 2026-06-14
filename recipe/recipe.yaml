@@ -16,7 +16,7 @@ source:
       git: https://github.com/Medial-EarlySign/MR_Tools.git
 
 build:
-  number: 0
+  number: 1
   script:
     - if: not use_pypi
       then: cd RepoLoadUtils/common
