@@ -9,12 +9,11 @@ Package license: MIT
 
 Summary: ETL logic and resources for MedPython
 
-Development: https://github.com/Medial-EarlySign/MR_Tools/tree/main/RepoLoadUtils/common
+Development: https://github.com/Medial-EarlySign/MR_Tools
 
-Documentation: https://medial-earlysign.github.io/MR_Wiki/
+Documentation: https://medial-earlysign.github.io/MR_Wiki
 
 Medial EarlySign ETL Library
-
 
 Current build status
 ====================
@@ -152,7 +151,4 @@ Feedstock Maintainers
 =====================
 
 * [@alonyado](https://github.com/alonyado/)
-
-
-<!-- dummy commit to enable rerendering -->
 
