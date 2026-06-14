@@ -1,0 +1,56 @@
+context:
+  name: "medpython-etl"
+  version: "1.0.3"
+  use_pypi: true
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - if: use_pypi
+    then:
+      url: https://pypi.org/packages/source/${{ name[0] }}/${{ name | replace("-", "_") }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
+      sha256: dab78595321e003dd6a9bca3bd783ecf2537af4ba78b9be14055aedf1fc095ad
+    else:
+      git: https://github.com/Medial-EarlySign/MR_Tools.git
+
+build:
+  number: 0
+  script:
+    - if: not use_pypi
+      then: cd RepoLoadUtils/common
+
+    - python -m pip install . --no-deps -vv
+
+requirements:
+  host:
+    - python
+    - setuptools >=61.0
+    - pip
+  run:
+    - python
+    - pandas
+    - numpy
+    - plotly
+
+tests:
+  - python:
+      imports:
+        - ETL_Infra
+      pip_check: true
+
+about:
+  homepage: https://github.com/Medial-EarlySign/MR_Tools
+  documentation: https://medial-earlysign.github.io/MR_Wiki
+  repository: https://github.com/Medial-EarlySign/MR_Tools
+  summary: ETL logic and resources for MedPython
+  description: |
+    Medial EarlySign ETL Library 
+  license: MIT
+  license_file:
+    - LICENCE
+
+extra:
+  recipe-maintainers:
+    - alonyado
