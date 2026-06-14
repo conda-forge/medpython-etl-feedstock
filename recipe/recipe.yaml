@@ -16,6 +16,7 @@ source:
       git: https://github.com/Medial-EarlySign/MR_Tools.git
 
 build:
+  noarch: python
   number: 1
   script:
     - if: not use_pypi
